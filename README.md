@@ -1,4 +1,5 @@
 # 🤖 Bop Sense
+[![PR Checks](https://github.com/shane-chris-barker/bop_sense/actions/workflows/test.yml/badge.svg)](https://github.com/shane-chris-barker/bop_sense/actions/workflows/test.yml)
 
 **Bop Sense** is the input processing module for **Bop**, a work-in-progress Raspberry Pi-powered robot pet project.
 
