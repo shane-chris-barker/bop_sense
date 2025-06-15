@@ -1,0 +1,63 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+venv*/
+.env
+.env.*
+!.env.example
+
+# Log files
+*.log
+logs/
+
+# Unit test / coverage
+.coverage
+.tox/
+.cache/
+nosetests.xml
+coverage.xml
+htmlcov/
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Compiled C files
+*.so
+
+# ONNX models / ML outputs
+*.onnx
+*.pkl
+*.h5
+
+# Media / images / audio used for training or sensitive
+data/
+images/
+samples/
+audio/
+
+# AMQP / MQTT mock test artifacts
+tmp/
+*.tmp
+
+# Git ignored folders for runtime use
+__generated__/

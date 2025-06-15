@@ -1,0 +1,5 @@
+SpeechRecognition
+pika
+pyaudio
+paho-mqtt
+dotenv
