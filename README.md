@@ -6,7 +6,7 @@
 This is **one of three core repositories**:
 - `bop_sense` - Listens to the world (mic, camera, sensors) and places AMQP or MQTT messages into a queue.
 
-- `bop_brain` - Does not exist yet but when it does, will be responsible for processing the messages produced by `bop_sense` and making decisions based on their content.
+- [bop_brain](https://github.com/shane-chris-barker/bop_brain) - Responsible for processing the messages produced by `bop_sense` and making decisions based on their content.
 
 - `bop_body` - Also does not exist yet but will subscribe and readt to commands produced by `bop_brain` and then take an action (motors, display, feedback etc)
 
