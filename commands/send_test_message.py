@@ -1,8 +1,8 @@
 import logging
 
-from communication.dtos.communication_dto import CommunicationDTO
+from bop_common.dtos.communication_dto import CommunicationDTO
 from communication.factories.publisher_factory import get_publisher
-from hardware_detection.enums.hardware_type import HardwareType
+from bop_common.enums.hardware_type import HardwareType
 
 logger = logging.getLogger(__name__)
 

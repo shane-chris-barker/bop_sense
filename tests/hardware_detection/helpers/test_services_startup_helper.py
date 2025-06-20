@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, MagicMock
-from hardware_detection.enums.hardware_type import HardwareType
+from bop_common.enums.hardware_type import HardwareType
 from hardware_detection.enums.service_name import ServiceType
 from hardware_detection.dtos.service_info_dto import ServiceInfoDTO
 from hardware_detection.helpers.services_startup_helper import start_enabled_services

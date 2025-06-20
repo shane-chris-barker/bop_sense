@@ -3,8 +3,7 @@ import logging
 from logger_config import setup_logging
 from hardware_detection.helpers.services_startup_helper import start_enabled_services
 from hardware_detection.services.service_registry import SERVICE_STARTERS
-from hardware_detection.services.hardware_config_service import HardwareConfigService
-from hardware_detection.dtos.service_info_dto import ServiceInfoDTO
+
 setup_logging()
 logger = logging.getLogger(__name__)
 

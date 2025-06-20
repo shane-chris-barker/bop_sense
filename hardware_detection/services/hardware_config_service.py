@@ -1,7 +1,7 @@
 import os
 from typing import Set
 import logging
-from hardware_detection.enums.hardware_type import HardwareType
+from bop_common.enums.hardware_type import HardwareType
 from hardware_detection.dtos.hardware_config_dto import HardwareConfigDTO
 logger = logging.getLogger(__name__)
 

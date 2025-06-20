@@ -1,7 +1,7 @@
 from unittest.mock import patch, MagicMock
 from commands.send_test_message import send_test_message
-from hardware_detection.enums.hardware_type import HardwareType
-from communication.dtos.communication_dto import CommunicationDTO
+from bop_common.enums.hardware_type import HardwareType
+from bop_common.dtos.communication_dto import CommunicationDTO
 
 def test_send_test_publishes_correctly():
     with patch("commands.send_test_message.get_publisher") as mock_get_publisher:

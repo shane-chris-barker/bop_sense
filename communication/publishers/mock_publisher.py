@@ -1,6 +1,6 @@
 import logging
 from communication.publishers.publisher_interface import PublisherInterface
-from communication.dtos.communication_dto import CommunicationDTO
+from bop_common.dtos.communication_dto import CommunicationDTO
 
 logger = logging.getLogger(__name__)
 

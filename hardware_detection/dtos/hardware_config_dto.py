@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from hardware_detection.enums.hardware_type import HardwareType
+from bop_common.enums.hardware_type import HardwareType
 @dataclass
 class HardwareConfigDTO:
     device_type: HardwareType

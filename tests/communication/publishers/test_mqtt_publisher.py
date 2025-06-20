@@ -2,13 +2,13 @@ import pytest
 import json
 import paho.mqtt.client as mqtt
 from unittest.mock import patch, MagicMock
-from hardware_detection.enums.hardware_type import HardwareType
-from communication.dtos.communication_dto import CommunicationDTO
 from communication.exceptions.publisher_exceptions import (
     PublisherConnectionException,
     PublisherPublishException
 )
 from communication.publishers.mqtt_publisher import MqttPublisher
+from bop_common.enums.hardware_type import HardwareType
+from bop_common.dtos.communication_dto import CommunicationDTO
 
 patch_string = "communication.publishers.mqtt_publisher.mqtt.Client" 
 
