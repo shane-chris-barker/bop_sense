@@ -3,13 +3,14 @@ from pika.exceptions import AMQPError
 import json
 import logging
 from unittest.mock import patch, MagicMock
-from hardware_detection.enums.hardware_type import HardwareType
 from communication.publishers.amqp_publisher import AmqpPublisher
-from communication.dtos.communication_dto import CommunicationDTO
 from communication.exceptions.publisher_exceptions import (
     PublisherPublishException,
     PublisherConnectionException
 )
+from bop_common.dtos.communication_dto import CommunicationDTO
+from bop_common.enums.hardware_type import HardwareType
+
 patch_string = "communication.publishers.amqp_publisher.pika.BlockingConnection"
 
 class TestAmqpPublisher:

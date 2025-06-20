@@ -3,7 +3,7 @@ import paho.mqtt.client as mqtt
 import logging
 from logger_config import setup_logging
 from communication.publishers.publisher_interface import PublisherInterface
-from communication.dtos.communication_dto import CommunicationDTO
+from bop_common.dtos.communication_dto import CommunicationDTO
 from communication.exceptions.publisher_exceptions import (
     PublisherConnectionException,
     PublisherPublishException

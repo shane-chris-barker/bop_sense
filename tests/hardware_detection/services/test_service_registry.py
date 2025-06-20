@@ -1,4 +1,4 @@
-from hardware_detection.enums.hardware_type import HardwareType
+from bop_common.enums.hardware_type import HardwareType
 from hardware_detection.services.service_registry import SERVICE_STARTERS
 from hardware_detection.services.mic_service_starter import MicServiceStarter
 

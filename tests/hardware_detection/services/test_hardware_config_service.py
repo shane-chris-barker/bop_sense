@@ -1,6 +1,6 @@
 import pytest
 from hardware_detection.services.hardware_config_service import HardwareConfigService
-from hardware_detection.enums.hardware_type import HardwareType
+from bop_common.enums.hardware_type import HardwareType
 
 class TestHardwareConfigService:
     mic_installed_key = "MIC_INSTALLED"
