@@ -1,16 +1,13 @@
-import logging
 
 from bop_common.dtos.communication_dto import CommunicationDTO
 from communication.factories.publisher_factory import get_publisher
 from bop_common.enums.hardware_type import HardwareType
 
-logger = logging.getLogger(__name__)
-
 def send_test_message():
-    logger.info("Starting debug message command...")
+    print("Starting debug message command...")
    
     publisher = get_publisher()
-    logger.info(f"Publisher is: {publisher}")
+    print(f"Publisher is: {publisher}")
 
     publisher.publish(
         CommunicationDTO(
@@ -18,6 +15,6 @@ def send_test_message():
             content={"text":"Hello from bop sense"}
         )
     )
-    logger.info("Publish called")
+    print("Publish called")
 if __name__ == "__main__":
     send_test_message()
