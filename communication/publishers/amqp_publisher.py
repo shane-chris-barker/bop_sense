@@ -47,10 +47,11 @@ class AmqpPublisher(PublisherInterface):
                 self.queue_declared = True
 
             body = json.dumps(message.to_dict())
+            body_bytes = body.encode('utf-8')
             self.channel.basic_publish(
                 exchange='',
                 routing_key=self.queue_name,
-                body=body.encode('utf-8'),
+                body=body_bytes,
                 properties=pika.BasicProperties(delivery_mode=2)
             )
         except AMQPError as e:
