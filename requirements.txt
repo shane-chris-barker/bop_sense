@@ -3,4 +3,4 @@ pika
 pyaudio
 paho-mqtt
 dotenv
-git+https://github.com/shane-chris-barker/bop_common.git@v0.1.0
+git+https://github.com/shane-chris-barker/bop_common.git@v0.1.1
