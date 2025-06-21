@@ -1,7 +1,6 @@
 import json
 import paho.mqtt.client as mqtt
 import logging
-from logger_config import setup_logging
 from communication.publishers.publisher_interface import PublisherInterface
 from bop_common.dtos.communication_dto import CommunicationDTO
 from communication.exceptions.publisher_exceptions import (
@@ -9,7 +8,6 @@ from communication.exceptions.publisher_exceptions import (
     PublisherPublishException
 )
 
-setup_logging()
 logger = logging.getLogger(__name__)
 
 class MqttPublisher(PublisherInterface):

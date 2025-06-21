@@ -1,7 +1,7 @@
 import pytest
 import json
 import paho.mqtt.client as mqtt
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from communication.exceptions.publisher_exceptions import (
     PublisherConnectionException,
     PublisherPublishException

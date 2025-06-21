@@ -1,4 +1,3 @@
-# tests/mic/test_voice_listener.py
 import pytest
 from unittest.mock import MagicMock
 from mic.voice_listener import VoiceListener

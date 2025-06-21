@@ -27,6 +27,7 @@ class HardwareConfigService:
         }
         self._log_configuration()
 
+    @staticmethod
     def _get_env_bool(self, key: str, default: bool = False) -> bool:
         value = os.getenv(key, str(default)).lower()
         return value in ('true', '1', 'yes', 'on')

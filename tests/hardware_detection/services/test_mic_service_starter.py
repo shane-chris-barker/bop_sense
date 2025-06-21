@@ -1,4 +1,3 @@
-import pytest
 from unittest.mock import patch, MagicMock
 from hardware_detection.services.mic_service_starter import MicServiceStarter
 from hardware_detection.enums.service_name import ServiceType

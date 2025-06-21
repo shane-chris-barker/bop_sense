@@ -102,7 +102,7 @@ class TestAmqpPublisher:
             publisher.publish(message)
             assert publisher.connection == mock_connection2
     
-    def test_close_connnection(self):
+    def test_close_connection(self):
         mock_connection = MagicMock()
         mock_connection.is_closed = False
 

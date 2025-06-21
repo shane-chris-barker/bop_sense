@@ -50,7 +50,7 @@ class AmqpPublisher(PublisherInterface):
             self.channel.basic_publish(
                 exchange='',
                 routing_key=self.queue_name,
-                body=body,
+                body=body.encode('utf-8'),
                 properties=pika.BasicProperties(delivery_mode=2)
             )
         except AMQPError as e:
