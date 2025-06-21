@@ -1,9 +1,8 @@
-import time
 import logging
 from logger_config import setup_logging
-from hardware_detection.helpers.services_startup_helper import start_enabled_services
-
 setup_logging()
+import time
+from hardware_detection.helpers.services_startup_helper import start_enabled_services
 logger = logging.getLogger(__name__)
 
 def main():
@@ -19,8 +18,8 @@ def main():
     except KeyboardInterrupt:
         logger.info(f"{log_prefix} Bop Sense Is Shutting down")
         for service in services:
-            if service.cleanup:
-                service.cleanup()
+            if hasattr(service.instance, 'cleanup') and callable(service.instance.cleanup):
+                service.instance.cleanup()
 
 if __name__ == "__main__":
     main()

@@ -17,4 +17,3 @@ def setup_logging():
         handlers=[console_handler],
         format=formatter_string
     )
-setup_logging()
