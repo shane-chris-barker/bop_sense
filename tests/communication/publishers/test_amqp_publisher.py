@@ -53,7 +53,9 @@ class TestAmqpPublisher:
             with caplog.at_level(logging.INFO):
                 publisher.publish(message)
 
-        expected_body = json.dumps(message.to_dict())
+        expected_body = json.dumps(message.to_dict()).encode('utf-8')
+        expected_log_body = json.dumps(message.to_dict())
+
         properties = mock_channel.basic_publish.call_args[1]['properties']
 
         mock_channel.basic_publish.assert_called_once_with(
@@ -63,7 +65,7 @@ class TestAmqpPublisher:
             properties=properties
         )
         assert properties.delivery_mode == 2
-        assert f"Published : {expected_body}" in caplog.text
+        assert f"Published : {expected_log_body}" in caplog.text
     
     def test_queue_only_declared_once(self):
         mock_channel = MagicMock()
@@ -102,7 +104,7 @@ class TestAmqpPublisher:
             publisher.publish(message)
             assert publisher.connection == mock_connection2
     
-    def test_close_connnection(self):
+    def test_close_connection(self):
         mock_connection = MagicMock()
         mock_connection.is_closed = False
 

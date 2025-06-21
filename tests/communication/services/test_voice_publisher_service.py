@@ -1,4 +1,3 @@
-
 from communication.services.voice_publisher_service import VoicePublisherService
 from communication.publishers.mock_publisher import MockPublisher
 

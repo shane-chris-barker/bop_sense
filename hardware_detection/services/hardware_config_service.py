@@ -27,9 +27,12 @@ class HardwareConfigService:
         }
         self._log_configuration()
 
-    def _get_env_bool(self, key: str, default: bool = False) -> bool:
-        value = os.getenv(key, str(default)).lower()
-        return value in ('true', '1', 'yes', 'on')
+    @staticmethod
+    def _get_env_bool(key: str, default: bool = False) -> bool:
+        env_value = os.getenv(key)
+        if env_value is None:
+            return default
+        return env_value.lower() in ('true', '1', 'yes', 'on')
     
     def _log_configuration(self):
         logger.info(f"{self.log_prefix} Device Configuration:")
