@@ -2,7 +2,7 @@ import logging
 from bop_common.dtos.communication_dto import CommunicationDTO
 from communication.publishers.publisher_interface import PublisherInterface
 from bop_common.enums.hardware_type import HardwareType
-from communication.exceptions.publisher_exceptions import PublisherPublishException
+from bop_common.exceptions.publisher_exceptions import PublisherPublishException
 from communication.services.publisher_service_interface import PublisherServiceInterface
 logger = logging.getLogger(__name__)
 

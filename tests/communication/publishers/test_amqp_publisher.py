@@ -4,7 +4,7 @@ import json
 import logging
 from unittest.mock import patch, MagicMock
 from communication.publishers.amqp_publisher import AmqpPublisher
-from communication.exceptions.publisher_exceptions import (
+from bop_common.exceptions.publisher_exceptions import (
     PublisherPublishException,
     PublisherConnectionException
 )
