@@ -1,4 +1,3 @@
-
 from bop_common.dtos.communication_dto import CommunicationDTO
 from communication.factories.publisher_factory import get_publisher
 from bop_common.enums.hardware_type import HardwareType

@@ -6,7 +6,7 @@ from pika.exceptions import AMQPError
 from typing import Optional
 from communication.publishers.publisher_interface import PublisherInterface
 from bop_common.dtos.communication_dto import CommunicationDTO
-from communication.exceptions.publisher_exceptions import (
+from bop_common.exceptions.publisher_exceptions import (
     PublisherConnectionException, 
     PublisherPublishException
 )
