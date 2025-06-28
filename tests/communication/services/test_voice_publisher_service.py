@@ -1,5 +1,6 @@
 from communication.services.voice_publisher_service import VoicePublisherService
 from communication.publishers.mock_publisher import MockPublisher
+from bop_common.enums.hardware_type import HardwareType
 
 def test_voice_publisher_service_publishes_correctly():
     mock_publisher = MockPublisher()
@@ -10,5 +11,5 @@ def test_voice_publisher_service_publishes_correctly():
     assert len(mock_publisher.published_messages) == 1
     message = mock_publisher.published_messages[0]
 
-    assert message.to_dict()["input"] == "mic"
+    assert message.to_dict()["input"] == HardwareType.MIC.value
     assert message.to_dict()["content"] == {'text': 'Execute Order 66'}

@@ -20,5 +20,5 @@ def start_enabled_services() -> list[ServiceInfoDTO]:
                 services.append(service_info)
                 logger.info(f"{log_prefix} Bop sense started the {service_info.service.name} service!")
             except Exception as e:
-                logger.error(f"{log_prefix} Bop sense couldn't start a device - {device_type.name} system: {e}")              
+                logger.error(f"{log_prefix} Bop sense couldn't start a device - {device_type.name} system: {e}")
     return services

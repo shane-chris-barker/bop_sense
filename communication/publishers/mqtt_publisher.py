@@ -36,7 +36,7 @@ class MqttPublisher(PublisherInterface):
                 raise PublisherPublishException(f"{self.log_prefix} {self.failed_to_publish_message}")
         except Exception as e:
             raise PublisherPublishException(f"{self.log_prefix} {self.failed_to_publish_message} {e}")
-        logger.info(f"{self.log_prefix} {self.success_publish_message} : {payload}")
+        logger.info(f"{self.log_prefix} {self.success_publish_message}")
 
     def close(self):
         self.client.loop_stop()

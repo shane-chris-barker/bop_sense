@@ -56,14 +56,13 @@ class TestMqttPublisher:
             expected_payload,
             qos=1
         )
-        assert f"Published : {expected_payload}" in caplog.text
+        assert f"Published" in caplog.text
 
     @patch(patch_string)
     def test_publish_fails_with_mqtt_error_code(self, mock_mqtt_client):
         mock_client_instance = mock_mqtt_client.return_value
         mock_client_instance.connect.return_value = mqtt.MQTT_ERR_SUCCESS
         mock_client_instance.publish.return_value = (mqtt.MQTT_ERR_NO_CONN, 1)
-
         publisher = MqttPublisher(host='localhost', port=1883, topic='test_topic')
         message = CommunicationDTO(input=HardwareType.MIC, content={"foo":"bar"})
 

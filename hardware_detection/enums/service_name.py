@@ -4,3 +4,4 @@ from dataclasses import dataclass
 @dataclass
 class ServiceType(Enum):
     VOICE = auto()
+    CAMERA = auto()

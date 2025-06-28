@@ -4,16 +4,11 @@ from mic.voice_listener import VoiceListener
 import threading
 import speech_recognition as sr
 
-
 class TestVoiceListener:
     @pytest.fixture
     def mock_voice_service(self):
         return MagicMock()
 
-    @pytest.fixture
-    def voice_listener(self, mock_voice_service):
-        return VoiceListener(mock_voice_service)
-    
     @pytest.fixture(autouse=True)
     def setup(self, mock_voice_service):
         self.voice_service = mock_voice_service

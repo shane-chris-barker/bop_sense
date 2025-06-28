@@ -1,10 +1,16 @@
 from bop_common.enums.hardware_type import HardwareType
 from hardware_detection.services.service_registry import SERVICE_STARTERS
 from hardware_detection.services.mic_service_starter import MicServiceStarter
+from hardware_detection.services.camera_service_starter import CameraServiceStarter
+
 
 def test_mic_service_is_registered():
     assert HardwareType.MIC in SERVICE_STARTERS
     assert isinstance(SERVICE_STARTERS[HardwareType.MIC], MicServiceStarter)
+
+def test_cam_service_is_registered():
+    assert HardwareType.CAMERA in SERVICE_STARTERS
+    assert isinstance(SERVICE_STARTERS[HardwareType.CAMERA], CameraServiceStarter)
 
 def test_registry_only_contains_known_hardware_types():
     valid_keys = {HardwareType.MIC, HardwareType.CAMERA}  # extend as needed
