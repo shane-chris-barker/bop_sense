@@ -1,6 +1,6 @@
 from hardware_detection.services.service_registry import SERVICE_STARTERS
 from hardware_detection.services.hardware_config_service import HardwareConfigService
-from hardware_detection.dtos.service_info_dto import ServiceInfoDTO
+from bop_common.dtos.service_info_dto import ServiceInfoDTO
 import logging
 
 logger = logging.getLogger(__name__)

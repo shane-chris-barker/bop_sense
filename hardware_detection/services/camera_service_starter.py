@@ -2,8 +2,8 @@ from camera.pi_camera_handler import PiCameraHandler
 from hardware_detection.services.hardware_config_service import HardwareConfigService
 from hardware_detection.services.service_starter_interface import ServiceStarterInterface
 from hardware_detection.enums.camera_type import CameraType
-from hardware_detection.enums.service_name import ServiceType
-from hardware_detection.dtos.service_info_dto import ServiceInfoDTO
+from bop_common.enums.service_name import ServiceType
+from bop_common.dtos.service_info_dto import ServiceInfoDTO
 from communication.services.image_publisher_service import ImagePublisherService
 from communication.factories.publisher_factory import get_publisher
 from camera.usb_camera_handler import USBCameraHandler
