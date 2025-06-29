@@ -2,8 +2,8 @@ import os
 from typing import Set
 import logging
 from bop_common.enums.hardware_type import HardwareType
+from bop_common.dtos.hardware_config_dto import HardwareConfigDTO
 from hardware_detection.enums.camera_type import CameraType
-from hardware_detection.dtos.hardware_config_dto import HardwareConfigDTO
 logger = logging.getLogger(__name__)
 
 class HardwareConfigService:

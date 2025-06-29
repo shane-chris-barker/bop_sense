@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from hardware_detection.dtos.service_info_dto import ServiceInfoDTO
+from bop_common.dtos.service_info_dto import ServiceInfoDTO
 
 class ServiceStarterInterface(ABC):
 

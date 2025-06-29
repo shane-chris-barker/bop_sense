@@ -1,7 +1,7 @@
 from unittest.mock import patch, MagicMock
 from hardware_detection.services.mic_service_starter import MicServiceStarter
-from hardware_detection.enums.service_name import ServiceType
-from hardware_detection.dtos.service_info_dto import ServiceInfoDTO
+from bop_common.enums.service_name import ServiceType
+from bop_common.dtos.service_info_dto import ServiceInfoDTO
 
 class TestMicServiceStarter:
 

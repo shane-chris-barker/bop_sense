@@ -3,7 +3,6 @@ from hardware_detection.services.service_registry import SERVICE_STARTERS
 from hardware_detection.services.mic_service_starter import MicServiceStarter
 from hardware_detection.services.camera_service_starter import CameraServiceStarter
 
-
 def test_mic_service_is_registered():
     assert HardwareType.MIC in SERVICE_STARTERS
     assert isinstance(SERVICE_STARTERS[HardwareType.MIC], MicServiceStarter)

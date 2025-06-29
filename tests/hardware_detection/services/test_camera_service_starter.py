@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock, patch
 from hardware_detection.services.camera_service_starter import CameraServiceStarter
-from hardware_detection.dtos.service_info_dto import ServiceInfoDTO
-from hardware_detection.enums.service_name import ServiceType
+from bop_common.dtos.service_info_dto import ServiceInfoDTO
+from bop_common.enums.service_name import ServiceType
 from hardware_detection.enums.camera_type import CameraType
 class TestCameraServiceStarter:
     @patch("hardware_detection.services.camera_service_starter.HardwareConfigService.get_enabled_camera_type",
