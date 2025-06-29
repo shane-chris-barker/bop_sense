@@ -1,4 +1,4 @@
-from hardware_detection.services.service_starter_interface import ServiceStarterInterface
+from bop_common.interfaces.service_starter_interface import ServiceStarterInterface
 from bop_common.dtos.service_info_dto import ServiceInfoDTO
 from bop_common.enums.service_name import ServiceType
 from communication.factories.publisher_factory import get_publisher

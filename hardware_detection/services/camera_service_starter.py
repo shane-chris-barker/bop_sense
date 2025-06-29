@@ -1,6 +1,6 @@
 from camera.pi_camera_handler import PiCameraHandler
 from hardware_detection.services.hardware_config_service import HardwareConfigService
-from hardware_detection.services.service_starter_interface import ServiceStarterInterface
+from bop_common.interfaces.service_starter_interface import ServiceStarterInterface
 from hardware_detection.enums.camera_type import CameraType
 from bop_common.enums.service_name import ServiceType
 from bop_common.dtos.service_info_dto import ServiceInfoDTO
