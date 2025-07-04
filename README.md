@@ -19,7 +19,9 @@ This is **one of three core repositories**:
 ## ✅ What `bop_sense` Can Do Right Now
 
 - **Detect if a microphone is activated** (via config flags)
+- **Detect if a piCam is activated** (via config flags)
 - **Listen for voice input** when a mic is present
+- **Take a photo every 5 seconds and add to the queue for processing** when a camera is present
 - **Send recognized voice messages to a message queue**
   - AMQP (RabbitMQ) or MQTT (Mosquitto) supported
 - **Run headlessly** (e.g. on Raspberry Pi via SSH)
@@ -30,7 +32,6 @@ This is effectively `v0.1` — limited in scope but functional as a foundation.
 
 ## 🛠️ Planned Features
 
-- Support for camera input (face recognition, object detection)
 - Temperature and environmental sensor reading
 - Configurable hardware abstraction
 - Better feedback (LEDs/display/sound) for diagnostic info
@@ -47,10 +48,11 @@ We are adding tests as we go. Run them via:
 pytest --cov=hardware_detection --cov-report=term-missing
 ```
 
-
 ## 🧾 Environment
 
 **Python 3.12** (venv named `venv`)
+
+
 
 Use .env files for environment variables (.env.dev, etc.)
 
@@ -74,7 +76,7 @@ Create a `.env.dev` file based on `.env.example`
 
 Install dependencies:
 ```
-pip install -r requirements.txt
+sh setup.sh
 ```
 Run locally:
 
