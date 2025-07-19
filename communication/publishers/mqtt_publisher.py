@@ -38,9 +38,9 @@ class MqttPublisher(PublisherInterface):
             raise PublisherPublishException(f"{self.log_prefix} {self.failed_to_publish_message} {e}")
         logger.info(f"{self.log_prefix} {self.success_publish_message}")
 
-    def close(self):
+    def close(self) -> None:
         self.client.loop_stop()
         self.client.disconnect()
 
-    def is_connected(self):
+    def is_connected(self) -> bool:
         return self.client.is_connected()

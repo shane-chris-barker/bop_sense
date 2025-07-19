@@ -2,11 +2,12 @@ import logging
 from communication.publishers.amqp_publisher import AmqpPublisher
 from communication.publishers.mock_publisher import MockPublisher
 from communication.publishers.mqtt_publisher import MqttPublisher
+from communication.publishers.publisher_interface import PublisherInterface
 from config import get_config
 
 logger = logging.getLogger(__name__)
 
-def get_publisher():
+def get_publisher() -> PublisherInterface:
     config = get_config()
     log_prefix = "[📢 PUBLISHER FACTORY]"
     logger.info(f"{log_prefix} is trying to start the {config.COMM_TYPE} Publisher...")

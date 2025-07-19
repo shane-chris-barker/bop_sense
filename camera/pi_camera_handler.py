@@ -24,33 +24,33 @@ class PiCameraHandler(CameraHandlerInterface):
         self.picam.configure(config)
         self.picam.start()
 
-    def start(self):
+    def start(self) -> None:
         if self.running:
             return
         self.running = True
         self.thread = threading.Thread(target=self._stream_loop, daemon=True)
         self.thread.start()
 
-    def stop(self):
+    def stop(self) -> None:
         if not self.running:
             return
         self.running = False
         if self.thread:
             self.thread.join()
 
-    def cleanup(self):
+    def cleanup(self) -> None:
         self.stop()
         if self.picam:
             self.picam.close()
 
-    def take_photo(self):
+    def take_photo(self) -> bytes:
         buffer = io.BytesIO()
         jpeg_config = self.picam.create_still_configuration(main={'format': 'RGB888', "size": (320, 240)})
         self.picam.switch_mode_and_capture_file(jpeg_config, buffer, format='jpeg', quality=50)
         buffer.seek(0)
         return buffer.getvalue()
 
-    def _stream_loop(self):
+    def _stream_loop(self) -> None:
         while self.running:
             try:
                 image_bytes = self.take_photo()

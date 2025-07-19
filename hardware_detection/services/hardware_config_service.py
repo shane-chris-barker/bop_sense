@@ -41,7 +41,7 @@ class HardwareConfigService:
             return default
         return env_value.lower() in ('true', '1', 'yes', 'on')
     
-    def _log_configuration(self):
+    def _log_configuration(self) -> None:
         logger.info(f"{self.log_prefix} Device Configuration:")
         for device_type, config in self._device_configs.items():
             status = self.status_service_enabled_string if config.enabled else self.status_service_disabled_string

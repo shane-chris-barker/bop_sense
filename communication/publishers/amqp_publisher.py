@@ -31,7 +31,7 @@ class AmqpPublisher(PublisherInterface):
         self.queue_declared = False
         self._ensure_connection()
 
-    def _ensure_connection(self):
+    def _ensure_connection(self) -> None:
         if self.connection is None or self.connection.is_closed:
             try:
                 self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=self.host, port=self.port))
@@ -58,6 +58,6 @@ class AmqpPublisher(PublisherInterface):
             raise PublisherPublishException(f"{self.log_prefix} {self.failed_to_publish_message} {e}")
         logger.info(f"{self.log_prefix} {self.success_publish_message} : {body}")
 
-    def close(self):
+    def close(self) -> None:
         if self.connection and not self.connection.is_closed:
             self.connection.close()

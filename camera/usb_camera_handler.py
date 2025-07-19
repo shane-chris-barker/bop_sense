@@ -15,24 +15,24 @@ class USBCameraHandler(CameraHandlerInterface):
         self.cap = cv2.VideoCapture(0)
         self.log_prefix = f"[📷 {self.__class__.__name__}]"
 
-    def start(self):
+    def start(self) -> None:
         if self.running:
             return
         self.running = True
         self.thread = threading.Thread(target=self._stream_loop, daemon=True)
         self.thread.start()
 
-    def stop(self):
+    def stop(self) -> None:
         if not self.running:
             return
         self.running = False
         if self.thread and self.thread.is_alive():
             self.thread.join(timeout=1)
 
-    def cleanup(self):
+    def cleanup(self) -> None:
         self.cap.release()
 
-    def take_photo(self):
+    def take_photo(self) -> bytes:
         ret, frame = self.cap.read()
         if not ret:
             raise RuntimeError("Failed to capture frame from USB camera.")
@@ -42,7 +42,7 @@ class USBCameraHandler(CameraHandlerInterface):
             raise RuntimeError("Failed to encode frame from USB camera.")
         return encoded_image.tobytes()
 
-    def _stream_loop(self):
+    def _stream_loop(self) -> None:
         while self.running:
             try:
                 image_bytes = self.take_photo()
