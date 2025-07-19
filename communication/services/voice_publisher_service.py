@@ -9,8 +9,12 @@ logger = logging.getLogger(__name__)
 class VoicePublisherService(PublisherServiceInterface):
     def __init__(self, publisher: PublisherInterface):
         self.publisher = publisher
-    def send_to_publisher(self, data: str):
-        dto = CommunicationDTO(input=HardwareType.MIC,  content={'text':data})
+
+    def send_to_publisher(self, data: str) -> None:
+        dto = CommunicationDTO(
+            input=HardwareType.MIC,
+            content={'text':data}
+        )
         try:
             self.publisher.publish(dto)
         except PublisherPublishException as e:

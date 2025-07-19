@@ -11,8 +11,12 @@ class ImagePublisherService(PublisherServiceInterface):
         self.log_prefix = '[📷 Image Publisher]'
         self.publisher = publisher
         self.camera_type = None
-    def send_to_publisher(self, data: str):
-        dto = CommunicationDTO(input=HardwareType.CAMERA, content={'type':'image', 'data':data})
+
+    def send_to_publisher(self, data: str) -> None:
+        dto = CommunicationDTO(
+            input=HardwareType.CAMERA,
+            content={'type':'image', 'data':data}
+        )
         try:
             self.publisher.publish(dto)
         except PublisherPublishException as e:
